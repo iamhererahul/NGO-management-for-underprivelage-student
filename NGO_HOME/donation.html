@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Now</title>
+    <link rel="stylesheet" href="donation.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 10px auto;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: calc(100% - 12px);
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        input[type="Donate Now"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        input[type="Donate Now"]:hover {
+            background-color: #45a049;
+        }
+        
+        .footer1,
+        .footer1 a {
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        .footer1 p {
+            margin-bottom: 1.5rem;
+            padding-left: 50px;
+            justify-content: center;
+            display: flex;
+            margin-top: 10px;
+            color: #000;
+        }
+        
+        .footer1 .footer_cols1 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 2rem;
+            padding-left: 50px;
+            color: #000;
+        }
+        
+        .footer1 li {
+            line-height: 1.9;
+            color: #000;
+        }
+        
+        .container12 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px;
+        }
+        
+        .logo12 img {
+            width: 100px;
+            height: 70px;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+        
+        .logo12 h1 {
+            margin: 0;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            margin-left: 500px;
+        }
+        
+        nav ul li {
+            display: inline;
+            margin-right: 70px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+            font-weight: 2px;
+            transition: color 0.3s;
+        }
+        /* Default header style */
+        
+        #header12 {
+            background-color: white;
+            /* Default background color with transparency */
+            position: fixed;
+            width: 100%;
+            height: auto;
+            top: 0;
+            z-index: 1000;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        /* Transparent header style when scrolled */
+        
+        #header12.scrolled {
+            background-color: white;
+            /* Adjust the transparency level as needed */
+        }
+        
+        nav ul li button {
+            background-color: white;
+            color: black;
+            padding: 6px;
+            border-radius: 4px;
+            margin-right: 0px;
+            margin: 5px;
+        }
+        
+        .con1 .container {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header12">
+        <div class="container12">
+            <div class="logo12">
+                <img src="logo.png" alt="NGO Logo">
+                <br>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Location</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="con1">
+        <div class="container">
+            <h2>MAKE A DONATION</h2>
+            <p>To donate to our sustainable projects, please fill out the donation form below. Your contribution can help us make a long-lasting impact.</p>
+            <h3>Individual</h3>
+            <form action="donation.php" method="post">
+                <label for="title">Title:</label>
+                <select id="title" name="title">
+                <option value="Mr.">Mr.</option>
+                <option value="Mrs.">Mrs.</option>
+                <option value="Ms.">Ms.</option>
+            </select>
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+                <label for="email">Email ID:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="phone">Phone No:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+                <label for="amount">Amount in $:</label>
+                <input type="number" id="amount" name="amount" min="1" required>
+                <h3>Address Detail</h3>
+                <label for="country">Country:</label>
+                <input type="text" id="country" name="country" required>
+                <label for="state">State:</label>
+                <input type="text" id="state" name="state" required>
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required>
+                <label for="pincode">Pincode:</label>
+                <input type="text" id="pincode" name="pincode" required>
+                <label for="citizenship">Citizenship:</label>
+                <input type="text" id="citizenship" name="citizenship" required>
+                <label for="image">Payment Screenshot:</label>
+                <input type="file" id="image" name="image" required/><br />
+      
+                <p>All the donations made by you are eligible for 50% tax exemption under 80G.</p>
+
+                <button type="submit">Donate Now</button>
+            </form>
+    </section>
+    </div>
+    <footer class="footer1">
+        <p>Questions? Call 000-800-919-1694</p>
+        <div class="footer_cols1">
+            <ul>
+                <li>FAQ</li>
+                <li>Investor Relations</li>
+                <li>Privacy</li>
+                <li>Speed Test</li>
+            </ul>
+            <ul>
+                <li>Help Centre</li>
+                <li>jobs</li>
+                <li>Cookie Preferences</li>
+                <li>Legal Notices</li>
+            </ul>
+            <ul>
+                <li>Account</li>
+                <li>Ways to Watch</li>
+                <li>Corporate Information</li>
+                <li>Only on Netflix</li>
+            </ul>
+            <ul>
+                <li>Media Centre</li>
+                <li>Terms of Use</li>
+                <li>Contact us</li>
+            </ul>
+        </div>
+
+    </footer>
+</body>
+
+</html>

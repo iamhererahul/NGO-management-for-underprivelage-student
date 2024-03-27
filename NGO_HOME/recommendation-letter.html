@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter of Recommendation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            /* Ensure proper positioning */
+        }
+        
+        .container {
+            width: 100mm;
+            /* A4 size width */
+            height: 150mm;
+            /* A4 size height */
+            margin: 20px auto;
+            background-image: url('images/letter3.png');
+            /* Background image for the letter */
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative;
+            /* Ensure proper positioning */
+            overflow: hidden;
+            /* Hide overflow to keep flash boxes within the container */
+        }
+        
+        .input-container {
+            margin-top: 20px;
+            /* Adjust margin as needed */
+        }
+        
+        label {
+            font-size: 18px;
+            margin-bottom: 5px;
+            display: block;
+        }
+        
+        input {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        .output-container {
+            margin-top: 20px;
+            /* Adjust margin as needed */
+            font-size: 18px;
+            color: #333;
+        }
+        
+        .input-wrapper {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 600px;
+            /* Adjust as needed */
+            margin: 20px auto;
+        }
+        
+        .generateLetter {
+            display: block;
+            margin: 20px auto;
+        }
+        /* Flashing box animation */
+        
+        .flash-box {
+            font-family: pollins;
+            width: 200px;
+            height: 50px;
+            background-color: transparent;
+            font-size: small;
+            text-align: center;
+            line-height: 50px;
+            animation: flash 1s infinite alternate;
+            position: absolute;
+            /* Ensure it's positioned absolutely */
+            top: 120px;
+            /* Adjust top position as needed */
+            left: -10px;
+            /* Adjust left position as needed */
+            z-index: 1;
+            /* Ensure it's above the background */
+        }
+        
+        .flash-box.date {
+            font-family: pollins;
+            width: 100px;
+            /* Adjust width if needed */
+            height: 50px;
+            /* Adjust height if needed */
+            top: 120px;
+            /* Adjust top position as needed */
+            left: 240px;
+            /* Adjust left position to place it next to the first box */
+            z-index: 1;
+            /* Ensure it's above the background */
+        }
+        /* Flashing animation */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="flash-box" id="flashBox">Dear [Name]</div>
+        <div class="flash-box date" id="flashDate">[Date]</div>
+        <!-- Content inside the container -->
+    </div>
+
+
+
+    <div class="input-wrapper">
+        <div class="input-container">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+        </div>
+        <div class="input-container">
+            <label for="date">Date:</label>
+            <input type="text" id="date" readonly>
+        </div>
+    </div>
+
+    <button class="generateLetter">Generate Letter</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const generateLetterBtn = document.querySelector('.generateLetter');
+            const flashBox = document.getElementById('flashBox');
+            const flashDate = document.getElementById('flashDate');
+
+            generateLetterBtn.addEventListener('click', function() {
+                const name = document.getElementById('name').value;
+                const currentDate = new Date().toLocaleDateString();
+
+                // Show the name and date in the flashing boxes
+                flashBox.innerText = `Dear ${name}`;
+                flashDate.innerText = currentDate;
+
+                // Reset the input fields after generating the letter
+                document.getElementById('name').value = '';
+
+                // You can add further logic here to generate the letter
+            });
+        });
+    </script>
+
+</body>
+
+</html>

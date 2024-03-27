@@ -1,0 +1,147 @@
+
+.container12 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+}
+
+.logo12 img {
+  width: 100px;
+  height: 70px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.logo12 h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 70px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: 2px;
+  transition: color 0.3s;
+}
+
+
+#header12 {
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  height: auto;
+  top: 0;
+  z-index: 1000;
+  font-family: "Times New Roman", Times, serif;
+}
+
+
+#header12.scrolled {
+  background-color: white; 
+}
+nav ul li button {
+  background-color: white;
+  color: black;
+  padding: 6px;
+  border-radius: 4px;
+  margin-right: 0px;
+  margin: 5px;
+}
+.registration-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh;
+  background-color: rgb(65, 201, 226);
+}
+
+.box {
+  max-width: 400px; 
+  width: 100%; 
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center; 
+  background: linear-gradient(to right, aqua, white);
+  border-radius: 10px;
+  box-shadow: 10px 10px 40px black, -10px -10px 40px #ffffff;
+}
+
+h2 {
+  text-align: center;
+}
+
+form {
+  text-align: center;
+}
+
+label {
+  display: flex;
+  justify-content: start;
+  margin-left: 50px;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 80%; 
+  max-width: 300px; 
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  width: 80%; 
+  max-width: 300px; 
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+.footer1,
+.footer1 a {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.footer1 p {
+  margin-bottom: 1.5rem;
+  padding-left: 50px;
+  justify-content: center;
+  display: flex;
+  margin-top: 10px;
+  color: #000;
+}
+
+.footer1 .footer_cols1 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+  padding-left: 50px;
+  color: #000;
+}
+
+.footer1 li {
+  line-height: 1.9;
+  color: #000;
+}

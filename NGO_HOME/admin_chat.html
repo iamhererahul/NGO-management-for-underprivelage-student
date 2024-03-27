@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Chat</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to right, aqua, white);
+    border-radius: 10px;
+    box-shadow: 10px 10px 40px black, -10px -10px 40px #ffffff;
+    }
+
+    .chat-container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        color: black;
+        border-radius: 5px;
+        background-image: url(chat.jpg);
+    }
+
+    .messages {
+        height: 300px;
+        overflow-y: scroll;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 10px;
+        background-color: white;
+
+    }
+
+    input[type="text"] {
+        width: calc(100% - 70px);
+        padding: 5px;
+        margin-right: 5px;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+    }
+
+    button {
+        padding: 5px 10px;
+        border: none;
+        border-radius: 3px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+<div class="chat-container">
+    <div class="messages" id="messages"></div>
+    <input type="text" id="message" placeholder="Type a message...">
+    <button onclick="sendMessage()">Send</button>
+</div>
+<script>
+    function sendMessage() {
+        var message = document.getElementById('message').value;
+        if (message.trim() !== '') {
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'send_message.php', true);
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xhr.onload = function() {
+                if (xhr.status == 200) {
+                    document.getElementById('message').value = '';
+                    fetchMessages();
+                }
+            };
+            xhr.send('message=' + message);
+        }
+    }
+
+    function fetchMessages() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'fetch_messages.php', true);
+        xhr.onload = function() {
+            if (xhr.status == 200) {
+                document.getElementById('messages').innerHTML = xhr.responseText;
+            }
+        };
+        xhr.send();
+    }
+
+    setInterval(fetchMessages, 1000);
+
+</script>
+</body>
+</html>

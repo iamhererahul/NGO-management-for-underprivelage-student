@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    /* background-image: url("sign1.jpg"); */
+    
+  }
+  
+  .letter {
+    background-color: white;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-image: url("letterhead1.jpg");
+    background-size: cover;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    
+  }
+  
+  p {
+    margin-bottom: 10px;
+    
+    
+  }
+  
+  .signature {
+    margin-top: 0px;
+    text-decoration: chartreuse;
+    
+  }
+  .div img
+  {
+    margin-bottom: 100px;
+  }

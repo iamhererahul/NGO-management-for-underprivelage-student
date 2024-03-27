@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Webpage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .quiz-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .quiz-container {
+            display: none;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            margin-bottom: 10px;
+        }
+
+        .submit-btn {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .quiz-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .quiz-buttons button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .quiz-buttons button:hover {
+            background-color: #0056b3;
+        }
+
+        .quiz-container {
+            display: none;
+            margin-bottom: 20px;
+            width: 70%;
+            float: left;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .submit-btn {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+
+        .quiz-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .quiz-container {
+            display: none;
+            margin-bottom: 20px;
+            text-align: center; /* Center-align the text in the container */
+        }
+
+        .question {
+           
+           
+            margin-bottom: 10px;
+            text-align: left; /* Align the question text to the left */
+        }
+
+        .submit-btn {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="quiz-buttons">
+        <button onclick="showQuiz('JEE')">JEE</button>
+        <button onclick="showQuiz('MHTCET')">MHTCET</button>
+        <button onclick="showQuiz('HSC')">HSC</button>
+    </div>
+
+    <div id="jeeQuiz" class="quiz-container">
+        <h2>BASIC Quiz</h2>
+        <form id="jeeForm">
+            <div class="question">
+                <p>1. What is the capital of France?</p>
+                <input type="radio" name="q1" value="a"> a) Paris<br>
+                <input type="radio" name="q1" value="b"> b) London<br>
+                <input type="radio" name="q1" value="c"> c) Berlin<br>
+                <input type="radio" name="q1" value="d"> d) Madrid
+            </div>
+            
+            <div class="question">
+                <p>2. Who is the first President of the United States?</p>
+                <input type="radio" name="q2" value="a"> a) George Washington<br>
+                <input type="radio" name="q2" value="b"> b) Abraham Lincoln<br>
+                <input type="radio" name="q2" value="c"> c) Thomas Jefferson<br>
+                <input type="radio" name="q2" value="d"> d) John Adams
+            </div>
+            
+            <div class="question">
+                <p>3. What is the chemical symbol for water?</p>
+                <input type="radio" name="q3" value="a"> a) W<br>
+                <input type="radio" name="q3" value="b"> b) H2O<br>
+                <input type="radio" name="q3" value="c"> c) HO<br>
+                <input type="radio" name="q3" value="d"> d) W2O
+            </div>
+            
+            <div class="question">
+                <p>4. Who wrote the play "Romeo and Juliet"?</p>
+                <input type="radio" name="q4" value="a"> a) William Shakespeare<br>
+                <input type="radio" name="q4" value="b"> b) Jane Austen<br>
+                <input type="radio" name="q4" value="c"> c) Charles Dickens<br>
+                <input type="radio" name="q4" value="d"> d) F. Scott Fitzgerald
+            </div>
+            
+            <div class="question">
+                <p>5. What is the atomic number of oxygen?</p>
+                <input type="radio" name="q5" value="a"> a) 6<br>
+                <input type="radio" name="q5" value="b"> b) 8<br>
+                <input type="radio" name="q5" value="c"> c) 10<br>
+                <input type="radio" name="q5" value="d"> d) 12
+            </div>
+            
+            <div class="question">
+                <p>6. Who discovered gravity?</p>
+                <input type="radio" name="q6" value="a"> a) Albert Einstein<br>
+                <input type="radio" name="q6" value="b"> b) Isaac Newton<br>
+                <input type="radio" name="q6" value="c"> c) Galileo Galilei<br>
+                <input type="radio" name="q6" value="d"> d) Nikola Tesla
+            </div>
+            
+            <div class="question">
+                <p>7. Which planet is known as the "Red Planet"?</p>
+                <input type="radio" name="q7" value="a"> a) Earth<br>
+                <input type="radio" name="q7" value="b"> b) Mars<br>
+                <input type="radio" name="q7" value="c"> c) Venus<br>
+                <input type="radio" name="q7" value="d"> d) Mercury
+            </div>
+            
+            <div class="question">
+                <p>8. Who painted the Mona Lisa?</p>
+                <input type="radio" name="q8" value="a"> a) Michelangelo<br>
+                <input type="radio" name="q8" value="b"> b) Leonardo da Vinci<br>
+                <input type="radio" name="q8" value="c"> c) Vincent van Gogh<br>
+                <input type="radio" name="q8" value="d"> d) Pablo Picasso
+            </div>
+            
+            <div class="question">
+                <p>9. What is the largest continent on Earth?</p>
+                <input type="radio" name="q9" value="a"> a) Europe<br>
+                <input type="radio" name="q9" value="b"> b) Africa<br>
+                <input type="radio" name="q9" value="c"> c) Asia<br>
+                <input type="radio" name="q9" value="d"> d) North America
+            </div>
+            
+            <div class="question">
+                <p>10. Who wrote the novel "1984"?</p>
+                <input type="radio" name="q10" value="a"> a) Aldous Huxley<br>
+                <input type="radio" name="q10" value="b"> b) George Orwell<br>
+                <input type="radio" name="q10" value="c"> c) Ray Bradbury<br>
+                <input type="radio" name="q10" value="d"> d) H.G. Wells
+            </div>
+            
+
+            <button class="submit-btn" type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div id="mhtcetQuiz" class="quiz-container">
+        <h2>MHTCET Quiz</h2>
+        <form id="mhtcetForm">
+            <div class="question">
+                <p>1. What is the capital of India?</p>
+                <input type="radio" name="q1" value="a"> a) Mumbai<br>
+                <input type="radio" name="q1" value="b"> b) Delhi<br>
+                <input type="radio" name="q1" value="c"> c) Bangalore<br>
+                <input type="radio" name="q1" value="d"> d) Kolkata
+            </div>
+            
+            <div class="question">
+                <p>2. Who is the President of the United States?</p>
+                <input type="radio" name="q2" value="a"> a) Donald Trump<br>
+                <input type="radio" name="q2" value="b"> b) Joe Biden<br>
+                <input type="radio" name="q2" value="c"> c) Barack Obama<br>
+                <input type="radio" name="q2" value="d"> d) George Washington
+            </div>
+            
+            <div class="question">
+                <p>3. What is the largest planet in our solar system?</p>
+                <input type="radio" name="q3" value="a"> a) Earth<br>
+                <input type="radio" name="q3" value="b"> b) Mars<br>
+                <input type="radio" name="q3" value="c"> c) Jupiter<br>
+                <input type="radio" name="q3" value="d"> d) Venus
+            </div>
+            
+            <div class="question">
+                <p>4. Who wrote the novel "Pride and Prejudice"?</p>
+                <input type="radio" name="q4" value="a"> a) Charles Dickens<br>
+                <input type="radio" name="q4" value="b"> b) Jane Austen<br>
+                <input type="radio" name="q4" value="c"> c) Leo Tolstoy<br>
+                <input type="radio" name="q4" value="d"> d) F. Scott Fitzgerald
+            </div>
+            
+            <div class="question">
+                <p>5. What is the chemical symbol for sodium?</p>
+                <input type="radio" name="q5" value="a"> a) Na<br>
+                <input type="radio" name="q5" value="b"> b) Fe<br>
+                <input type="radio" name="q5" value="c"> c) Au<br>
+                <input type="radio" name="q5" value="d"> d) Pb
+            </div>
+            
+            <div class="question">
+                <p>6. Who invented the telephone?</p>
+                <input type="radio" name="q6" value="a"> a) Alexander Graham Bell<br>
+                <input type="radio" name="q6" value="b"> b) Thomas Edison<br>
+                <input type="radio" name="q6" value="c"> c) Nikola Tesla<br>
+                <input type="radio" name="q6" value="d"> d) Albert Einstein
+            </div>
+            
+            <div class="question">
+                <p>7. What is the largest ocean on Earth?</p>
+                <input type="radio" name="q7" value="a"> a) Pacific Ocean<br>
+                <input type="radio" name="q7" value="b"> b) Indian Ocean<br>
+                <input type="radio" name="q7" value="c"> c) Atlantic Ocean<br>
+                <input type="radio" name="q7" value="d"> d) Arctic Ocean
+            </div>
+            
+            <div class="question">
+                <p>8. Who is the author of "To Kill a Mockingbird"?</p>
+                <input type="radio" name="q8" value="a"> a) J.K. Rowling<br>
+                <input type="radio" name="q8" value="b"> b) Harper Lee<br>
+                <input type="radio" name="q8" value="c"> c) George Orwell<br>
+                <input type="radio" name="q8" value="d"> d) Mark Twain
+            </div>
+            
+            <div class="question">
+                <p>9. Which planet is known as the "Red Planet"?</p>
+                <input type="radio" name="q9" value="a"> a) Earth<br>
+                <input type="radio" name="q9" value="b"> b) Jupiter<br>
+                <input type="radio" name="q9" value="c"> c) Mars<br>
+                <input type="radio" name="q9" value="d"> d) Venus
+            </div>
+            
+            <div class="question">
+                <p>10. Who is the first woman Prime Minister of India?</p>
+                <input type="radio" name="q10" value="a"> a) Indira Gandhi<br>
+                <input type="radio" name="q10" value="b"> b) Sonia Gandhi<br>
+                <input type="radio" name="q10" value="c"> c) Pratibha Patil<br>
+                <input type="radio" name="q10" value="d"> d) Mamata Banerjee
+            </div>
+            
+
+            <button class="submit-btn" type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div id="hscQuiz" class="quiz-container">
+        <h2>HSC Quiz</h2>
+        <form id="hscForm">
+            <div class="question">
+    <p>1. What is the capital of France?</p>
+    <input type="radio" name="q1" value="a"> a) London<br>
+    <input type="radio" name="q1" value="b"> b) Paris<br>
+    <input type="radio" name="q1" value="c"> c) Berlin<br>
+    <input type="radio" name="q1" value="d"> d) Rome
+</div>
+
+<div class="question">
+    <p>2. Who wrote the play "Romeo and Juliet"?</p>
+    <input type="radio" name="q2" value="a"> a) William Shakespeare<br>
+    <input type="radio" name="q2" value="b"> b) Charles Dickens<br>
+    <input type="radio" name="q2" value="c"> c) Jane Austen<br>
+    <input type="radio" name="q2" value="d"> d) Leo Tolstoy
+</div>
+
+<div class="question">
+    <p>3. Which planet is known as the "Red Planet"?</p>
+    <input type="radio" name="q3" value="a"> a) Earth<br>
+    <input type="radio" name="q3" value="b"> b) Jupiter<br>
+    <input type="radio" name="q3" value="c"> c) Mars<br>
+    <input type="radio" name="q3" value="d"> d) Venus
+</div>
+
+<div class="question">
+    <p>4. Who painted the Mona Lisa?</p>
+    <input type="radio" name="q4" value="a"> a) Vincent van Gogh<br>
+    <input type="radio" name="q4" value="b"> b) Pablo Picasso<br>
+    <input type="radio" name="q4" value="c"> c) Leonardo da Vinci<br>
+    <input type="radio" name="q4" value="d"> d) Michelangelo
+</div>
+
+<div class="question">
+    <p>5. What is the chemical symbol for water?</p>
+    <input type="radio" name="q5" value="a"> a) W<br>
+    <input type="radio" name="q5" value="b"> b) H2O<br>
+    <input type="radio" name="q5" value="c"> c) O2<br>
+    <input type="radio" name="q5" value="d"> d) H2
+</div>
+
+<div class="question">
+    <p>6. Who discovered gravity?</p>
+    <input type="radio" name="q6" value="a"> a) Albert Einstein<br>
+    <input type="radio" name="q6" value="b"> b) Isaac Newton<br>
+    <input type="radio" name="q6" value="c"> c) Galileo Galilei<br>
+    <input type="radio" name="q6" value="d"> d) Nikola Tesla
+</div>
+
+<div class="question">
+    <p>7. Which gas do plants absorb for photosynthesis?</p>
+    <input type="radio" name="q7" value="a"> a) Oxygen<br>
+    <input type="radio" name="q7" value="b"> b) Carbon Dioxide<br>
+    <input type="radio" name="q7" value="c"> c) Nitrogen<br>
+    <input type="radio" name="q7" value="d"> d) Hydrogen
+</div>
+
+<div class="question">
+    <p>8. Who is known as the "Father of Computers"?</p>
+    <input type="radio" name="q8" value="a"> a) Bill Gates<br>
+    <input type="radio" name="q8" value="b"> b) Steve Jobs<br>
+    <input type="radio" name="q8" value="c"> c) Alan Turing<br>
+    <input type="radio" name="q8" value="d"> d) Charles Babbage
+</div>
+
+<div class="question">
+    <p>9. What is the largest organ in the human body?</p>
+    <input type="radio" name="q9" value="a"> a) Liver<br>
+    <input type="radio" name="q9" value="b"> b) Brain<br>
+    <input type="radio" name="q9" value="c"> c) Heart<br>
+    <input type="radio" name="q9" value="d"> d) Skin
+</div>
+
+<div class="question">
+    <p>10. Which country is famous for the Taj Mahal?</p>
+    <input type="radio" name="q10" value="a"> a) India<br>
+    <input type="radio" name="q10" value="b"> b) Egypt<br>
+    <input type="radio" name="q10" value="c"> c) China<br>
+    <input type="radio" name="q10" value="d"> d) Italy
+</div>
+
+
+            <button class="submit-btn" type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        
+    function showQuiz(quizType) {
+        // Get the selected quiz container
+        const selectedContainer = document.getElementById(`${quizType.toLowerCase()}Quiz`);
+
+        // Toggle the display of the selected container
+        if (selectedContainer.style.display === 'block') {
+            selectedContainer.style.display = 'none'; // Close the container
+        } else {
+            // Hide all quiz containers
+            document.querySelectorAll('.quiz-container').forEach(container => {
+                container.style.display = 'none';
+            });
+
+            // Show the selected quiz container
+            selectedContainer.style.display = 'block';
+        }
+    }
+
+    document.getElementById('jeeForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        // Handle JEE form submission
+    });
+
+    document.getElementById('mhtcetForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        // Handle MHTCET form submission
+    });
+
+    document.getElementById('hscForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        // Handle HSC form submission
+    });
+
+
+    function showQuiz(quizType) {
+            // Hide all quiz containers
+            document.querySelectorAll('.quiz-container').forEach(container => {
+                container.style.display = 'none';
+            });
+
+            // Show the selected quiz container
+            document.getElementById(`${quizType.toLowerCase()}Quiz`).style.display = 'block';
+        }
+
+        document.getElementById('jeeForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            // Handle JEE form submission
+            showAnalyticalGraphs(); // Show analytical graphs after submitting JEE quiz
+            showScore(80); // Example score, replace 80 with actual score
+        });
+
+        document.getElementById('mhtcetForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            // Handle MHTCET form submission
+            showAnalyticalGraphs(); // Show analytical graphs after submitting MHTCET quiz
+            showScore(75); // Example score, replace 75 with actual score
+        });
+
+        document.getElementById('hscForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            // Handle HSC form submission
+            showAnalyticalGraphs(); // Show analytical graphs after submitting HSC quiz
+            showScore(90); // Example score, replace 90 with actual score
+        });
+
+        function showAnalyticalGraphs() {
+            // Show the analytical graphs container
+            document.getElementById('analyticalGraphs').style.display = 'block';
+        }
+
+        function showScore(score) {
+            // Create a score element
+            const scoreElement = document.createElement('div');
+            scoreElement.classList.add('score-container');
+            scoreElement.textContent = `Your Score: ${score}%`;
+
+            // Append the score element to the analytical graphs container
+            document.getElementById('analyticalGraphs').appendChild(scoreElement);
+        }
+    
+</script>
+
+</body>
+
+</html>

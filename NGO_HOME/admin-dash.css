@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+ background: linear-gradient(to right,rgb(42, 40, 40) ,white);
+}
+
+.container {
+  
+    display: flex;
+    justify-content: start;
+}
+
+.profile {
+    padding: 20px;
+    background-color: white;
+    border: #040504 5px solid;
+    width: 350px;
+    border-radius: 5px;
+    background: #00ffff;
+    border-radius: 20px;
+    height: 550PX;
+    margin-left: 20px;
+}
+
+.profile img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 5px;
+    margin-left: 95px;
+}
+
+.container .profile h3 {
+    margin-top: 10px;
+    font-size: 20px;
+    color: var(--black);
+    margin-left: 140px;
+}
+
+.profile p {
+    margin-top: 20px;
+    color: var(--black);
+    font-size: 20px;
+}
+
+.profile p a {
+    color: var(--red);
+}
+
+.profile p a:hover {
+    text-decoration: underline;
+}
+
+.admin-content {
+    width: 80%;
+    padding: 20px;
+    background: transparent;
+  border-radius: 10px;
+  height: 100vh;
+}
+
+.admin-content h1 {
+    color: #333;
+}
+
+.admin-content div {
+    margin-bottom: 20px;
+}
+
+.admin-content h2 {
+    color: #555;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0px;
+
+}
+
+
+
+
+.program-functions,
+.volunteer-functions,
+.documentation-functions {
+    display: flex;
+    opacity: 1;
+}
+
+
+/* Style for function buttons */
+
+.program-functions a,
+.volunteer-functions a,
+.documentation-functions a {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 8px 15px;
+    background-color: rgb(0, 141, 218);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+
+/* Change button color on hover */
+
+.program-functions a:hover,
+.volunteer-functions a:hover,
+.documentation-functions a:hover {
+    background-color: #050505;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: rgb(0, 141, 218);
+    color: rgb(0, 141, 218);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    
+}
+
+.button:hover {
+    background-color: black;
+}
+
+.user-management a {
+    text-decoration: none;
+    color: white;
+}
+
+.bot {
+    padding: 10px 20px;
+    background-color: rgb(0, 141, 218);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+}
+
+.bot a {
+    text-decoration: none;
+    color: white;
+}

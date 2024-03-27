@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      h2 {
+        color: #333;
+      }
+      img {
+        margin-top: 20px;
+        max-width: 100%;
+      }
+      p {
+        color: #666;
+        margin: 10px 0;
+      }
+      .container a {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+      .container a:hover {
+        background-color: #0056b3;
+      }
+      .footer1,
+      .footer1 a {
+        color: #999;
+        font-size: 0.9rem;
+      }
+
+      .footer1 p {
+        margin-bottom: 1.5rem;
+        padding-left: 50px;
+        justify-content: center;
+        display: flex;
+        margin-top: 10px;
+        color: #000;
+      }
+
+      .footer1 .footer_cols1 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 2rem;
+        padding-left: 50px;
+        color: #000;
+      }
+
+      .footer1 li {
+        line-height: 1.9;
+        color: #000;
+      }
+
+      .container12 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px;
+      }
+
+      .logo12 img {
+        width: 100px;
+        height: 70px;
+        margin-right: 10px;
+        margin-left: 10px;
+      }
+
+      .logo12 h1 {
+        margin: 0;
+      }
+
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        margin-left: 500px;
+      }
+
+      nav ul li {
+        display: inline;
+        margin-right: 70px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: black;
+        font-weight: 2px;
+        transition: color 0.3s;
+      }
+      /* Default header style */
+
+      #header12 {
+        background-color: white;
+        /* Default background color with transparency */
+        position: fixed;
+        width: 100%;
+        height: auto;
+        top: 0;
+        z-index: 1000;
+        font-family: "Times New Roman", Times, serif;
+      }
+      /* Transparent header style when scrolled */
+
+      #header12.scrolled {
+        background-color: white;
+        /* Adjust the transparency level as needed */
+      }
+
+      nav ul li button {
+        background-color: white;
+        color: black;
+        padding: 6px;
+        border-radius: 4px;
+        margin-right: 0px;
+        margin: 5px;
+      }
+
+      .con1 .container {
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <header id="header12">
+      <div class="container12">
+        <div class="logo12">
+          <img src="logo.png" alt="NGO Logo" />
+          <br />
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Location</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Team</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="payment">
+      <div class="container">
+        <h2>Make Payment</h2>
+        <p>
+          Please make the donation by scanning the QR code or using the UPI ID
+          provided below.
+        </p>
+        <!-- QR code image -->
+        <img src="qr.jpg" alt="Payment QR Code" width="200" />
+        <!-- UPI ID -->
+        <p>UPI ID: borcellefoundation@okngobank</p>
+        <p>
+          Please ensure that you provide the correct UPI ID and verify the
+          payment before proceeding.
+        </p>
+        <h2>PAYMENT SCREENSHOT IS REQUIRED TO GAIN A CERTIFICATE</h2>
+        <!-- Add a button to return to the donation form -->
+        <a href="donation.html">Donation Form</a>
+      </div>
+    </section>
+
+    <footer class="footer1">
+      <p>Questions? Call 000-800-919-1694</p>
+      <div class="footer_cols1">
+        <ul>
+          <li>FAQ</li>
+          <li>Investor Relations</li>
+          <li>Privacy</li>
+          <li>Speed Test</li>
+        </ul>
+        <ul>
+          <li>Help Centre</li>
+          <li>jobs</li>
+          <li>Cookie Preferences</li>
+          <li>Legal Notices</li>
+        </ul>
+        <ul>
+          <li>Account</li>
+          <li>Ways to Watch</li>
+          <li>Corporate Information</li>
+          <li>Only on Netflix</li>
+        </ul>
+        <ul>
+          <li>Media Centre</li>
+          <li>Terms of Use</li>
+          <li>Contact us</li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

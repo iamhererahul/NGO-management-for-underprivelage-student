@@ -1,0 +1,119 @@
+    // Sample scores data for 6 students
+      const studentsData = [
+        {
+          name: "John Doe",
+          age: 20,
+          grade: 11,
+          scores: [85, 70, 90, 75, 80],
+        },
+        {
+          name: "Jane Smith",
+          age: 19,
+          grade: 12,
+          scores: [75, 85, 80, 90, 95],
+        },
+        {
+          name: "Michael Johnson",
+          age: 18,
+          grade: 10,
+          scores: [90, 65, 75, 85, 70],
+        },
+        {
+          name: "Emily Brown",
+          age: 21,
+          grade: 12,
+          scores: [80, 85, 90, 85, 75],
+        },
+        {
+          name: "David Wilson",
+          age: 19,
+          grade: 11,
+          scores: [70, 75, 80, 85, 90],
+        },
+        {
+          name: "Sarah Martinez",
+          age: 20,
+          grade: 10,
+          scores: [85, 90, 75, 70, 80],
+        },
+      ];
+
+      // Colors for the charts
+      const chartColors = [
+        "#7FDBFF",
+        "#39CCCC",
+        "#3D9970",
+        "#2ECC40",
+        "#01FF70",
+        "#FF4136",
+      ];
+
+      // Display the chart of the selected student
+      function displayChart(studentIndex) {
+        const ctx = document
+          .querySelector(`#chart-container-${studentIndex} .chart`)
+          .getContext("2d");
+        const student = studentsData[studentIndex];
+        const scoresData = {
+          labels: ["Math", "Science", "English", "History", "Art"],
+          datasets: [
+            {
+              label: student.name,
+              data: student.scores,
+              backgroundColor: chartColors[studentIndex],
+              borderColor: chartColors[studentIndex],
+              borderWidth: 1,
+            },
+          ],
+        };
+        const chartConfig = {
+          type: "bar",
+          data: scoresData,
+          options: {
+            scales: {
+              yAxes: [
+                {
+                  ticks: {
+                    beginAtZero: true,
+                  },
+                },
+              ],
+            },
+          },
+        };
+        new Chart(ctx, chartConfig);
+      }
+
+      // Toggle the visibility of student details container
+      function toggleStudentDetailsContainer(studentIndex) {
+        const containers = document.querySelectorAll(
+          ".student-details-container"
+        );
+        containers.forEach((container) => {
+          if (container.id === `student-details-container-${studentIndex}`) {
+            container.classList.toggle("active");
+          } else {
+            container.classList.remove("active");
+          }
+        });
+      }
+
+      // Attach click event listeners to each student
+      const students = document.querySelectorAll(".student");
+      students.forEach((student) => {
+        student.addEventListener("click", () => {
+          const studentIndex = student.getAttribute("data-index");
+          const activeIndex = document
+            .querySelector(".student.active")
+            ?.getAttribute("data-index");
+          if (activeIndex && activeIndex !== studentIndex) {
+            const activeDetails = document.querySelector(
+              `.student-details-container.active`
+            );
+            activeDetails.classList.remove("active");
+          }
+          student.classList.toggle("active");
+          toggleStudentDetailsContainer(studentIndex);
+          displayChart(studentIndex);
+        });
+      });

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Certificate</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            width: 600px;
+            height: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            background-image: url(voluntercer.png);
+            background-size: cover;
+        }
+        
+        .receipt-header h1 {
+            color: #4CAF50;
+            padding-top: 30px;
+        }
+        
+        .receipt-info {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        .receipt-info p {
+            margin: 5px 0;
+            margin-top: 160px;
+            margin-left: 255px;
+            text-decoration: underline;
+        }
+        
+        .download-btn {
+            background-color: #008CBA;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 5px;
+            margin-top: 250px;
+        }
+        
+        .form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-top: 250px;
+        }
+        
+        input[type="text"] {
+            width: 80%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background-color: #0066cc;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        .certificate {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .certificate h1 {
+            color: black;
+            margin-top: 80px;
+            font-size: 20px;
+            margin-top: 100px;
+        }
+        .cert1 .form{
+            margin-top: 10px;
+            padding-top: 200px;
+
+        }
+        .cert1{
+            padding-top: 30px;
+            display: flex;
+            flex-direction: row;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="cert1">
+        <div class="form">
+            <label for="name">Enter Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name">
+            <button onclick="generateCertificate()">Generate Certificate</button>
+            <button onclick="downloadCertificate()">Download PDF</button>
+        </div>
+        <div class="container">
+    
+            <div class="certificate">
+                <u><h1 id="certificate-name">[Name]</h1></u>
+            </div>
+    </section>
+    
+        <script src="certificate.js"></script>
+        <script>
+            function generatePDF() {
+                const {
+                    jsPDF
+                } = window.jspdf;
+                doc.text(100, 20, "This is Header");
+                doc.text(10, 30, "This is a simple paragraph");
+                doc.save("new File.pdf");
+            }
+        </script>
+</body>
+
+</html>

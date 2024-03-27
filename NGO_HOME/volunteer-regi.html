@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <style>
+        .container12 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px;
+        }
+        
+        .logo12 img {
+            width: 100px;
+            height: 70px;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+        
+        .logo12 h1 {
+            margin: 0;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav ul li {
+            display: inline;
+            margin-right: 70px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+            font-weight: 2px;
+            transition: color 0.3s;
+        }
+        /* Default header style */
+        
+        #header12 {
+            background-color: white;
+            /* Default background color with transparency */
+            position: fixed;
+            width: 100%;
+            height: auto;
+            top: 0;
+            z-index: 1000;
+            font-family: "Times New Roman", Times, serif;
+        }
+        /* Transparent header style when scrolled */
+        
+        #header12.scrolled {
+            background-color: white;
+            /* Adjust the transparency level as needed */
+        }
+        
+        nav ul li button {
+            background-color: white;
+            color: black;
+            padding: 6px;
+            border-radius: 4px;
+            margin-right: 0px;
+            margin: 5px;
+        }
+        
+        .footer1,
+        .footer1 a {
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        .footer1 p {
+            margin-bottom: 1.5rem;
+            padding-left: 50px;
+            justify-content: center;
+            display: flex;
+            margin-top: 10px;
+            color: #000;
+        }
+        
+        .footer1 .footer_cols1 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 2rem;
+            padding-left: 50px;
+            color: #000;
+        }
+        
+        .footer1 li {
+            line-height: 1.9;
+            color: #000;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient( white);
+        }
+        
+        .registration-container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+            /* background-color: #f9f9f9; */
+            border-radius: 10px;
+           
+            border-radius: 50px;
+            background: linear-gradient( aqua, white);
+          
+
+               margin-top: 90px;
+               background: linear-gradient(to right, aqua, white);
+    border-radius: 10px;
+    box-shadow: 10px 10px 40px black, -10px -10px 40px #ffffff;
+        }
+        .box{
+            padding-top: 10px;
+        }
+        
+
+        .registration-container .box .input-group{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        .registration-container .box .input-group .nor1{
+            padding-top: 30px;
+            margin-top: 40px;
+
+        }
+        .registration-container .box .input-group .nor2{
+            padding-top: 30px;
+            margin-left: 50px;
+            margin-top: 30px;
+        }
+        h2 {
+            text-align: center;
+        }
+        .registration-container p{
+            margin-left: 380px;
+        }
+        form {
+            text-align: left;
+        }
+        
+        label {
+            display: block;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"],
+        textarea,
+        input[type="file"] {
+            width: 100%;
+            padding: 9px;
+            margin-bottom: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+        
+        input[type="submit"] {
+            width: 30%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 380px;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header12">
+        <div class="container12">
+            <div class="logo12">
+                <img src="logo.png" alt="NGO Logo" />
+                <br />
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="landing.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Location</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="registration-container">
+        <div class="box">
+            <h2>Register As Volunteer</h2>
+            <form action="volunteer-regi.php" method="post" enctype="multipart/form-data">
+                <div class="input-group">
+                    <div class="nor1">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required /><br />
+        
+                        <label for="age">Age:</label><br />
+                        <input type="number" id="age" name="age" required />
+        
+                        <label for="email">Email:</label><br />
+                        <input type="email" id="email" name="email" required />
+                    </div>
+                    <div class="nor2">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required /><br />
+                    
+        
+                        <label for="aadhar">Aadhar Number:</label>
+                        <input type="text" id="aadhar" name="aadhar" required /><br />
+        
+                        <label for="pan">PAN Card Number:</label>
+                        <input type="text" id="pan" name="pan" required /><br />
+
+                    </div>
+        
+                     <div class="nor2">
+                        <label for="phone">Phone Number:</label>
+                        <input type="text" id="phone" name="phone" required /><br />
+                        <label for="address">Address:</label>
+                        <textarea id="address" name="address" required></textarea><br />
+        
+                        <label for="image">Upload Image:</label>
+                        <input type="file" id="image" name="image" /><br />
+                    </div>
+                </div>
+
+                <p>
+                    Already have an account? <a href="volunteer-login.html">Login</a> here.
+                </p>
+
+                <input type="submit" value="Register" />
+            </form>
+        </div>
+    </section>
+    <footer class="footer1">
+        <p>Questions? Call 000-800-919-1694</p>
+        <div class="footer_cols1">
+            <ul>
+                <li>FAQ</li>
+                <li>Investor Relations</li>
+                <li>Privacy</li>
+                <li>Speed Test</li>
+            </ul>
+            <ul>
+                <li>Help Centre</li>
+                <li>jobs</li>
+                <li>Cookie Preferences</li>
+                <li>Legal Notices</li>
+            </ul>
+            <ul>
+                <li>Account</li>
+                <li>Ways to Watch</li>
+                <li>Corporate Information</li>
+                <li>Only on Netflix</li>
+            </ul>
+            <ul>
+                <li>Media Centre</li>
+                <li>Terms of Use</li>
+                <li>Contact us</li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

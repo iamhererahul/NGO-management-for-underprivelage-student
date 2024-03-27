@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Task Assignment Chart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        table {
+            width: 100%; 
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .task-checkbox {
+            margin: 0;
+            padding: 0;
+        }
+
+        .task-button {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .task-button:hover {
+            background-color: #45a049;
+        }
+
+        .task-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        .task-popup-content {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .back-button {
+            padding: 5px 10px;
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            margin-left: 1200px;
+        }
+
+        .back-button:hover {
+            background-color: #00608E;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 align="center"><u>Volunteer Assign Task</u></h2>
+    <form id="volunteerTaskForm" action="volunteer_tasks.php" method="post">
+        <table>
+            <thead>
+                <tr>
+                    <th>Volunteer Name</th>
+                    <th>Mentoring</th>
+                    <th>Tutoring</th>
+                    <th>Fundraising</th>
+                    <th>Organizing Events</th>
+                    <th>Description</th>
+                    <th>Assign Task</th>
+                </tr>
+            </thead>
+            <tbody id="volunteerTableBody">
+                <!-- Dynamic table rows will be added here -->
+            </tbody>
+        </table>
+        <input type="submit" value="Assign Tasks">
+    </form>
+
+    <div id="taskPopup" class="task-popup">
+        <div class="task-popup-content">
+            <span>Task Is Assigned!</span>
+            <span class="close" onclick="closePopup()">&times;</span>
+        </div>
+    </div>
+
+    <script>
+        const tbody = document.getElementById('volunteerTableBody');
+        const tasks = ['mentoring', 'tutoring', 'fundraising', 'organizingEvents'];
+        const names = [
+            "Ravi", "Amit", "Rahul", "Siddharth", "Vivek", "Arun", "Rajesh", "Anil", "Kunal", "Prakash",
+            "Sita", "Meera", "Priya", "Jyoti", "Anjali", "Sarika", "Shobha", "Pooja", "Neha", "Rashmi",
+            "Girish", "Sanjay", "Alok", "Dinesh", "Anuj", "Amitabh", "Ajay", "Rohan", "Ganesh", "Nikhil",
+            "Kiran", "Aarti", "Shruti", "Anusha", "Arpita", "Manisha", "Kavita", "Mohan", "Karthik", "Jatin",
+            "Deepak", "Avinash", "Amitava", "Jayesh", "Sneha", "Ishita", "Esha", "Ojaswi", "Aarti", "Madhuri",
+            "Elina", "Jatin", "Tarun", "Ananya", "Bhavya", "Charu", "Eesha", "Gauri", "Hansa", "Heena",
+            "Lavanya", "Mira"
+        ];
+
+        for (let i = 0; i < 100; i++) {
+            const randomName = names[Math.floor(Math.random() * names.length)];
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>${randomName}</td>
+                ${tasks.map(task => `<td><input type="checkbox" class="task-checkbox" name="${task}" id="${task}-${randomName}"></td>`).join('')}
+                <td><input type="text" class="description-input" id="description-${randomName}"></td>
+                <td><button class="task-button" onclick="assignTask('${randomName}')">Assign</button></td>
+            `;
+            tbody.appendChild(tr);
+        }
+
+        function assignTask(volunteerName) {
+            showPopup();
+        }
+
+        function showPopup() {
+            document.getElementById("taskPopup").style.display = "block";
+            setTimeout(() => {
+                closePopup();
+            }, 3000); 
+        }
+
+        function closePopup() {
+            document.getElementById("taskPopup").style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
